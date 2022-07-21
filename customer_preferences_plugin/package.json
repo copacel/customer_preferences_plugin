@@ -1,0 +1,21 @@
+{
+  "name": "customer_preferences_plugin",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile:js": "sgmf-scripts --compile js",
+    "upload": "sgmf-scripts --upload",
+    "uploadCartridge": "sgmf-scripts --uploadCartridge customer_preferences_plugin",
+    "watch": "sgmf-scripts --watch",
+    "watch:static": "sgmf-scripts --watch static"
+  },
+  "author": "Marius Copacel",
+  "license": "MIT",
+  "devDependencies": {
+    "sgmf-scripts": "^2.3.0"
+  },
+  "paths": {
+    "base": "../../storefront-reference-architecture/cartridges/app_storefront_base/"
+  }
+}

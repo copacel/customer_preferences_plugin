@@ -1,0 +1,42 @@
+<div class="card">
+    <div class="card-header clearfix">
+        <h2 class="pull-left profile-header">${Resource.msg('label.preferences','account',null)}</h2>
+        <isif condition="${!pdict.account.isExternallyAuthenticated}">
+            <a href="${URLUtils.url('Account-EditPreferences')}" class="pull-right" aria-label="${Resource.msg('label.profile.edit','account',null)}">${Resource.msg('link.edit','account',null)}</a>
+        </isif>
+    </div>
+    <div class="card-body">
+        <dl>
+            <dt>${Resource.msg('label.profile.birthday','account',null)}</dt>
+            <dd><isprint value="${pdict.account.customPreferences.birthDay}" style="DATE_SHORT" timezone="utc"/></dd>
+        </dl>
+        <dl>
+            <dt>${Resource.msg('label.profile.newsletterSubscription','account',null)}</dt>
+            <dd>
+                <isif condition="${pdict.account.customPreferences.newsletterSubscription}">
+                    ${Resource.msg('label.profile.yes','account',null)}
+                <iselse>
+                    ${Resource.msg('label.profile.no','account',null)}
+                </isif>
+            
+            </dd>
+        </dl>
+        <dl>
+            <dt>${Resource.msg('label.profile.preferenceElectronics','account',null)}</dt>
+            <dd>
+                <isif condition="${pdict.account.customPreferences.preferenceElectronics}">
+                    ${Resource.msg('label.profile.yes','account',null)}
+                <iselse>
+                    ${Resource.msg('label.profile.no','account',null)}
+                </isif>
+        </dl>
+            <dt>${Resource.msg('label.profile.preferenceApparel','account',null)}</dt>
+            <dd>
+                <isif condition="${pdict.account.customPreferences.preferenceApparel}">
+                    ${Resource.msg('label.profile.yes','account',null)}
+                <iselse>
+                    ${Resource.msg('label.profile.no','account',null)}
+                </isif>
+            </dd>
+    </div>
+</div>

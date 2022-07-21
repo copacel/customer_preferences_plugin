@@ -1,0 +1,74 @@
+<form action="${URLUtils.url('Account-SavePreferences')}" class="edit-profile-form" method="POST" <isprint value="${pdict.profileForm.attributes}" encoding="off" />>
+
+    <div class="form-group">
+        <label class="form-control-label" for="birthDay">
+            <isprint value="${pdict.preferencesForm.customer_preferences.birthDay.label}" encoding="htmlcontent" />
+        </label>
+        <input type="text" class="form-control" id="birthDay" <isprint value="${pdict.preferencesForm.customer_preferences.birthDay.attributes}" encoding="off" />>
+        <div class="invalid-feedback"></div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-check">
+            <input id="newsletterSubscription"
+                name="newsletterSubscription"
+                type="checkbox"
+                value="true"
+                class="form-check-input"
+                <isif condition="${pdict.preferencesForm.customer_preferences.newsletterSubscription.checked === true}">
+                    checked
+                </isif>
+                />
+            <label class="form-check-label" for="newsletterSubscription">
+                <isprint value="${pdict.preferencesForm.customer_preferences.newsletterSubscription.label}" encoding="htmlcontent" />
+            </label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-check">
+            <input id="preferenceApparel"
+                name="preferenceApparel"
+                type="checkbox"
+                value="true"
+                data-test="${JSON.stringify(pdict.preferencesForm.customer_preferences.preferenceApparel)}"
+                class="form-check-input"
+                <isif condition="${pdict.preferencesForm.customer_preferences.preferenceApparel.checked === true}">
+                    checked
+                </isif>
+                />
+            <label class="form-check-label" for="preferenceApparel">
+                <isprint value="${pdict.preferencesForm.customer_preferences.preferenceApparel.label}" encoding="htmlcontent" />
+            </label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-check">
+            <input id="preferenceElectronics"
+                name="preferenceElectronics"
+                type="checkbox"
+                value="true"
+                class="form-check-input"
+                <isif condition="${pdict.preferencesForm.customer_preferences.preferenceElectronics.checked === true}">
+                    checked
+                </isif>
+                 />
+            <label class="form-check-label" for="preferenceElectronics">
+                <isprint value="${pdict.preferencesForm.customer_preferences.preferenceElectronics.label}" encoding="htmlcontent" />
+            </label>
+        </div>
+    </div>
+
+    <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}"/>
+
+    <div class="row">
+        <div class="col">
+            <a href="${URLUtils.url('Account-Show-1')}" class="btn btn-block btn-outline-primary">${Resource.msg('button.cancel','account',null)}</a>
+        </div>
+
+        <div class="col">
+            <button type="submit" name="save" class="btn btn-save btn-block btn-primary">${Resource.msg('button.save','account',null)}</button>
+        </div>
+    </div>
+</form>

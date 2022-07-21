@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19" secure="false">
+	<group formid="customer_preferences">
+		<field
+			formid="birthDay"
+			label="label.input.birthDay.profile"
+			mandatory="false"
+			type="string" />
+
+		<field
+			formid="preferenceApparel"
+			label="label.input.preferenceApparel.profile"
+			mandatory="false"
+			type="boolean" />
+
+		<field
+			formid="newsletterSubscription"
+			label="label.input.newsletterSubscription.profile"
+			mandatory="false"
+			type="boolean" />
+
+		<field
+			formid="preferenceElectronics"
+			label="label.input.preferenceElectronics.profile"
+			mandatory="false"
+			type="boolean" />
+	</group>
+</form>
